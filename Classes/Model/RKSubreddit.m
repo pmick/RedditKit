@@ -85,17 +85,6 @@
     }];
 }
 
-+ (NSValueTransformer *)totalSubscribersJSONTransformer
-{
-    return [MTLValueTransformer transformerWithBlock:^id(id totalSubscribers) {
-        if (!totalSubscribers) {
-            return @(0);
-        } else {
-            return totalSubscribers;
-        }
-    }];
-}
-
 + (NSValueTransformer *)accountsActiveJSONTransformer
 {
     return [MTLValueTransformer transformerWithBlock:^id(id accountsActive) {
