@@ -53,7 +53,6 @@
         @"trafficPagePubliclyAccessible": @"data.public_traffic",
         @"submitText": @"data.submit_text",
         @"submitTextHTML": @"data.submit_text_html",
-        @"totalSubscribers": @"data.subscribers"
     };
     
     return [[super JSONKeyPathsByPropertyKey] mtl_dictionaryByAddingEntriesFromDictionary:keyPaths];
@@ -83,6 +82,17 @@
 {
     return [MTLValueTransformer transformerWithBlock:^id(id value) {
         return (!value || value == [NSNull null] ? @0 : value);
+    }];
+}
+
++ (NSValueTransformer *)totalSubscribersJSONTransformer
+{
+    return [MTLValueTransformer transformerWithBlock:^id(id totalSubscribers) {
+        if (!totalSubscribers) {
+            return @(0);
+        } else {
+            return totalSubscribers;
+        }
     }];
 }
 
