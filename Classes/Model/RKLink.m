@@ -132,6 +132,10 @@
         {
             return nil;
         }
+        else if ([thumbnailURL isKindOfClass:[NSString class]] && thumbnailURL.length < 1)
+        {
+            return nil;
+        }
         else
         {
             return [NSURL URLWithString:thumbnailURL];
