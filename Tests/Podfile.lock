@@ -36,7 +36,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   RedditKit:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
@@ -45,4 +45,4 @@ SPEC CHECKSUMS:
   RedditKit: a08a7d7b722e61f6669c63ccd92aa709acb09607
   Specta: eb90708ed77569bbda089f8ead10bb99b8e9489e
 
-COCOAPODS: 0.36.4
+COCOAPODS: 0.38.0
