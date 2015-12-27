@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.9'
 
   s.source_files = 'Classes/*.{h,m}', 'Classes/**/*.{h,m}'
-  s.header_mappings_dir =  'Classes'
 
   s.dependency 'AFNetworking', '~> 2.4'
   s.dependency 'Mantle', '~> 1.5'
