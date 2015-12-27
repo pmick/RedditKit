@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RKThing.h"
+#import "RKCreated.h"
 
 typedef NS_ENUM(NSUInteger, RKSubmissionType) {
     RKSubmissionTypeAny = 1,
@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger, RKSpamFilterStrength) {
     RKSpamFilterStrengthNoStrength
 };
 
-@interface RKSubreddit : RKThing
+@interface RKSubreddit : RKCreated
 
 /**
  The numbers of accounts active in the last 15 minutes.
