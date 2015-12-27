@@ -6,7 +6,7 @@
 //
 //
 
-#import "Mantle.h"
+#import <Mantle/Mantle.h>
 
 @interface RKLinkEmbeddedMedia : MTLModel <MTLJSONSerializing>
 
