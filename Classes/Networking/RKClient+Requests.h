@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 
 #import "RKClient.h"
-#import "AFHTTPSessionManager.h"
+#import <AFNetworking/AFNetworking.h>
 
 typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id responseObject, NSError *error);
 
@@ -30,7 +30,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
 /**
  Many of reddit's API methods require a set of parameters and simply return an error if they fail, and nothing of value when they succeed.
  This method eliminates much of the repetition when writing methods around these methods.
- 
+
  @param path The path to request.
  @param parameters The parameters to pass with the request.
  @param completion A block to execute at the end of the request.
@@ -39,7 +39,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
 
 /**
  This method wraps around the 'api/comment' API (aka "Submit Comment" API) and/or the "api/editusertext" API, using parameters set into the body of an HTTP POST request.
- 
+
  @param path The path to request.
  @param parameters The parameters to pass with the request.
  @param completion A block to execute at the end of the request.
@@ -48,7 +48,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
 
 /**
  This method wraps around the 'api/morechildren' API, using parameters set into the body of an HTTP POST request.
- 
+
  @param path The path to request.
  @param parameters The parameters to pass with the request.
  @param completion A block to execute at the end of the request.
@@ -57,7 +57,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
 
 /**
  This method makes a request for a listing and converts the response into objects.
- 
+
  @param path The path to request.
  @param parameters The parameters to pass with the request.
  @param completion A block to execute at the end of the request.
@@ -66,7 +66,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
 
 /**
  This method makes a request for a listing and converts the response into objects.
- 
+
  @param path The path to request.
  @param parameters The parameters to pass with the request.
  @param pagination The optional pagination object.
@@ -78,7 +78,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
  This method makes a request for a listing and returns the full response.
  This is in contrast to listingTaskWithPath:parameters:pagination:completion: which returns
  a listing in its formatted state, with all JSON parsed.
- 
+
  @param path The path to request.
  @param parameters The parameters to pass with the request.
  @param pagination The optional pagination object.
@@ -88,7 +88,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
 
 /**
  This method makes a request for a listing and converts the response into objects.
- 
+
  @param path The path to request.
  @param parameters The parameters to pass with the request.
  @param pagination The optional pagination object.
@@ -100,7 +100,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
  This method makes a request for a listing and returns the full response.
  This is in contrast to listingTaskWithPath:parameters:pagination:completion: which returns
  a listing in its formatted state, with all JSON parsed.
- 
+
  @param path The path to request.
  @param parameters The parameters to pass with the request.
  @param pagination The optional pagination object.
@@ -111,7 +111,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
 
 /**
  This method wraps around the 'api/friend' API, as many different methods are based on this endpoint.
- 
+
  @param container The 'container' parameter.
  @param subredditName The 'r' parameter.
  @param name The 'name' parameter.
@@ -122,7 +122,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
 
 /**
  This method wraps around the 'api/unfriend' API, as many different methods are based on this endpoint.
- 
+
  @param container The 'container' parameter.
  @param subredditName The 'r' parameter.
  @param name The 'name' parameter.
@@ -155,7 +155,7 @@ typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id response
 
 /**
  A base request method for use throughout the library.
- 
+
  @param method The method to use; one of 'GET', 'POST', 'PUT' or 'DELETE'.
  @param path The path to request.
  @param parameters The parameters to pass with the request.
