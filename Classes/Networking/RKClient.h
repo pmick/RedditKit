@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AFHTTPSessionManager.h"
+#import <AFNetworking/AFNetworking.h>
 #import "RKCompletionBlocks.h"
 #import "RKPagination.h"
 
@@ -47,21 +47,21 @@ extern NSString * const RKClientErrorDomain;
 
 /**
  How many requests are allowed before the rate limit is reset.
- 
+
  @note This is only accurate at the time of the last request.
  */
 @property (nonatomic, assign) NSUInteger rateLimitedRequestsRemaining;
 
 /**
  How many requests have been made in this current rate limited period.
- 
+
  @note This is only accurate at the time of the last request.
  */
 @property (nonatomic, assign) NSUInteger rateLimitedRequestsUsed;
 
 /**
  The time, in seconds, until the rate limit resets.
- 
+
  @note This is only accurate at the time of the last request.
  */
 @property (nonatomic, assign) NSTimeInterval timeUntilRateLimitReset;
@@ -85,25 +85,25 @@ extern NSString * const RKClientErrorDomain;
 
 /**
  Signs into reddit.
- 
+
  @param username The user's username.
  @param password The user's password.
  @param completion The block to be executed upon completion of the request.
- 
+
  @note This method signs out the current client before attempting to sign in.
  */
 - (NSURLSessionDataTask *)signInWithUsername:(NSString *)username password:(NSString *)password completion:(RKCompletionBlock)completion;
 
 /**
  Updates the current user. This is useful for getting updated karma totals, or checking whether they have unread private messages.
- 
+
  @param completion The block to be executed upon completion of the request.
  */
 - (void)updateCurrentUserWithCompletion:(RKCompletionBlock)completion;
 
 /**
  Whether or not there is a user currently signed in.
- 
+
  @note This returns YES if there is an existing modhash value, but cannot guarantee its validity.
  */
 - (BOOL)isSignedIn;

@@ -20,14 +20,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "Mantle.h"
+#import <Mantle/Mantle.h>
 
 @interface RKThing : MTLModel <MTLJSONSerializing>
 
 /**
  A string identifier that indicates the object's type.
  This can be one of the follow types (these values are case sensitive):
- 
+
  t1: Comment
  t2: Account
  t3: Link
