@@ -12,7 +12,7 @@
 
 /**
  The type of the provider, typically their domain name.
- 
+
  @example "imgur.com" or "video"
  */
 @property (nonatomic, copy) NSString *type;
@@ -31,21 +31,21 @@
 
 /**
  The URL for the provider.
- 
+
  @example "http://imgur.com"
  */
-@property (nonatomic, strong) NSURL *providerURL;
+@property (nonatomic, strong) NSString *providerURL;
 
 /**
  The description of the provider.
  */
-@property (nonatomic, copy) NSURL *providerDescription;
+@property (nonatomic, copy) NSString *providerDescription;
 
 /**
  The title of the provider.
  This is the value you would see in the title bar when visiting the providerURL.
  */
-@property (nonatomic, copy) NSURL *providerTitle;
+@property (nonatomic, copy) NSString *providerTitle;
 
 /**
  The scaled-down width of the thumbnail.
@@ -70,6 +70,6 @@
 /**
  The direct link to the thumbnail, in its full size.
  */
-@property (nonatomic, strong) NSURL *thumbnailURL;
+@property (nonatomic, strong) NSString *thumbnailURL;
 
 @end
